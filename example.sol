@@ -2,19 +2,21 @@ pragma solidity ^0.5.0;
 
 contract hello{
     struct Book{
-        string kode;
-        string title;
-        string author;
+        string kodedokumen;
+        string namadokumen;
+        string namattddokumen;
+        string namaverifikator;
+        string tanggalverifikasi;
     }
-    
+
     mapping(string => Book) public books;
     
-    function addBook(string memory _kode, string memory _title, string memory _author) public {
-        books[_kode] = Book(_kode, _title, _author);
+    function addBook(string memory _kodedokumen, string memory _namadokumen, string memory _namattddokumen, string memory _namaverifikator, string memory _tanggalverifikasi) public {
+        books[_kodedokumen] = Book(_kodedokumen, _namadokumen, _namattddokumen, _namaverifikator, _tanggalverifikasi);
     } 
     
 
-    function deleteBook(string memory _kode) public {   
-        delete books[_kode];
+    function deleteBook(string memory _kodedokumen) public {   
+        delete books[_kodedokumen];
     }
 }
